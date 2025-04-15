@@ -1,0 +1,26 @@
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+
+input,textarea {
+  margin-top: 0.3rem;
+  border-radius: 15px;
+  background-color: rgb(230, 230, 230);
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0.5rem 1.8rem;
+  width: 100%;
+  border: 0.1rem solid #48a5f1a4;
+}
+
+input:focus,textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(72, 130, 200, 0.5);
+}
+
+textarea {
+  resize: none;
+  height: 10rem;
+}
