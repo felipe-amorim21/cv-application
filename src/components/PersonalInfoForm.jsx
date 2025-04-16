@@ -7,23 +7,23 @@ function PersonalInfoForm({personalInfo, onPersonalInfoChange}) {
       <form className='form'>
         <label htmlFor="">
           First Name
-          <input type="text" onChange={onPersonalInfoChange} value={personalInfo.firstName} />
+          <input type="text" name='firstName' onChange={onPersonalInfoChange} value={personalInfo.firstName} />
         </label>
         <label htmlFor="">
           Last Name
-          <input type="text" onChange={onPersonalInfoChange} value={personalInfo.lastName} />
+          <input type="text" name='lastName' onChange={onPersonalInfoChange} value={personalInfo.lastName} />
         </label>
         <label htmlFor="">
           E-mail
-          <input type="email" onChange={onPersonalInfoChange} value={personalInfo.email} />
+          <input type="email" name='email' onChange={onPersonalInfoChange} value={personalInfo.email} />
         </label>
-        <label htmlFor="">
+        <label htmlFor="" >
           Phone Number
-          <input type="phone" onChange={onPersonalInfoChange} value={personalInfo.phoneNumber}/>
+          <input type="phone" name='phoneNumber' onChange={onPersonalInfoChange} value={personalInfo.phoneNumber}/>
         </label>
-        <label htmlFor="">
+        <label htmlFor="" >
           Summary
-          <textarea onChange={onPersonalInfoChange} value={personalInfo.summary}/>
+          <textarea name='summary' onChange={onPersonalInfoChange} value={personalInfo.summary}/>
         </label>
       </form>
     </>
