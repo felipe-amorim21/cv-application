@@ -1,0 +1,13 @@
+.cv-application {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: space-around;
+}
+
+.cv-info, .cv-display {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+}

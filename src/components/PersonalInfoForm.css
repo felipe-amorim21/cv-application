@@ -1,26 +1,67 @@
+/* Estilo para o formulário */
+.personal-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Estilo para os rótulos */
 label {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
 }
 
-
-input,textarea {
-  margin-top: 0.3rem;
-  border-radius: 15px;
-  background-color: rgb(230, 230, 230);
-  color: rgba(0, 0, 0, 0.87);
-  padding: 0.5rem 1.8rem;
-  width: 100%;
-  border: 0.1rem solid #48a5f1a4;
-}
-
-input:focus,textarea:focus {
-  outline: none;
-  box-shadow: 0px 0px 6px rgba(72, 130, 200, 0.5);
-}
-
+/* Estilo base para inputs e textarea */
+input,
 textarea {
-  resize: none;
-  height: 10rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: 1px solid #48a5f1a4;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #308ee0;
+  box-shadow: 0px 0px 6px rgba(72, 130, 200, 0.3);
+}
+
+/* Estilo específico para textarea */
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+  max-height: 20rem;
+}
+
+/* Responsivo e layout geral */
+.cv-application {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cv-info,
+.cv-display {
+  flex: 1 1 45%;
+  min-width: 300px;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }

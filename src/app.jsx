@@ -1,5 +1,7 @@
 import {useState} from 'react';
+import './App.css'
 import PersonalInfoForm from "./components/PersonalInfoForm";
+import CVDisplay from "./components/CVDisplay";
 function App(){
     const [personalInfo, setPersonalInfo] = useState({
         firstName: '',
@@ -25,7 +27,7 @@ function App(){
                 <PersonalInfoForm personalInfo={personalInfo} onPersonalInfoChange={handlePersonalInfoChange}/>
             </div>
             <div className="cv-display">
-
+                <CVDisplay personalInfo={personalInfo}/>
             </div>
         </div>
     );
