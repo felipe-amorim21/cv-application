@@ -36,7 +36,7 @@ function App(){
                 <EducationForm educationInfo={educationInfo} onEducationInfoChange={(e) => handleInfoChange(e, setEducationInfo)}/>
             </div>
             <div className="cv-display">
-                <CVDisplay personalInfo={personalInfo}/>
+                <CVDisplay personalInfo={personalInfo} educationInfo={educationInfo}/>
             </div>
         </div>
     );
