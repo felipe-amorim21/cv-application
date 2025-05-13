@@ -3,6 +3,7 @@ import './App.css'
 import PersonalInfoForm from "./components/PersonalInfoForm";
 import CVDisplay from "./components/CVDisplay";
 import EducationForm from './components/EducationForm';
+import WorkExperienceForm from './components/WorkExperienceForm';
 function App(){
     const [personalInfo, setPersonalInfo] = useState({
         firstName: '',
@@ -17,6 +18,14 @@ function App(){
         degreeName: '',
         endDate: ''
     }]);
+
+    const [workExperienceInfo, setWorkExperienceInfo] = useState([{
+        jobTitle: '',
+        companyName: '',
+        startDate: '',
+        endDate: '',
+        description: ''
+    }])
 
     function handleInfoChange(e, sectionSetter){
         const {name, value} = e.target;
@@ -35,9 +44,37 @@ function App(){
         setEducationInfo(updatedEducation)
     }
 
+    function handleWorkExperienceChange(e, index){
+        const {name, value} = e.target;
+
+        const updatedWorkExperience = [...workExperienceInfo];
+        updatedWorkExperience[index][name] = value
+        setWorkExperienceInfo(updatedWorkExperience);
+    }
+
 
     const addEducationForm = () => {
         setEducationInfo(prevEducation => [...prevEducation, {schoolName: '', degreeName: '', endDate: ''}])
+    }
+
+    const removeEducationForm = (indexRemove) => {
+        const updatedEducationForm = educationInfo.filter((education, index) => index !== indexRemove)
+        setEducationInfo(updatedEducationForm);
+    }
+
+    const addWorkExperienceForm = () => {
+        setWorkExperienceInfo(prevWorkExperience => [...prevWorkExperience, {
+            jobTitle: '',
+            companyName: '',
+            startDate: '',
+            endDate: '',
+            description: ''
+        }])
+    }
+
+    const removeWorkExperience = (indexRemove) => {
+        const updatedWorkExperience = workExperienceInfo.filter((work, index) => index !== indexRemove);
+        setWorkExperienceInfo(updatedWorkExperience);
     }
 
         
@@ -46,17 +83,35 @@ function App(){
         <div className="cv-application">
             <div className="cv-info">
                 <PersonalInfoForm personalInfo={personalInfo} onPersonalInfoChange={(e) => handleInfoChange(e, setPersonalInfo)}/>
-                <div>
+                <div className='education'>
+                    <div className='education-conteiner'>
                     {educationInfo.map((educationInfo, index) => (
-                    <EducationForm key={index} educationInfo={educationInfo} onEducationInfoChange={(e) => handleEducationChange(e, index)}/>
+                    <div key={index}>
+                        <EducationForm educationInfo={educationInfo} onEducationInfoChange={(e) => handleEducationChange(e, index)}/>
+                        <button onClick={() => removeEducationForm(index)}>Delete</button>
+                    </div>
+                    
                 ))}
+                    </div>
                 <button onClick={addEducationForm}>Add</button>
+                </div>
+
+                <div className='work'>
+                    <div className='work-container'>
+                        {workExperienceInfo.map((workExperienceInfo, index) => (
+                            <div key={index}>
+                                <WorkExperienceForm workExperienceInfo={workExperienceInfo} onWorkExperienceChange={(e) => handleWorkExperienceChange(e, index)}/>
+                                <button onClick={() => removeWorkExperience(index)}>Delete</button>
+                            </div>
+                        ))}
+                    </div>
+                    <button onClick={addWorkExperienceForm}>Add</button>
                 </div>
                 
 
             </div>
             <div className="cv-display">
-                <CVDisplay personalInfo={personalInfo} educationInfo={educationInfo}/>
+                <CVDisplay personalInfo={personalInfo} educationInfo={educationInfo} workExperienceInfo={workExperienceInfo}/>
             </div>
         </div>
     );
