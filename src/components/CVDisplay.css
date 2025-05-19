@@ -1,0 +1,49 @@
+.cv-preview {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.cv-header {
+    border-bottom: 2px solid #444;
+    margin-bottom: 20px;
+}
+
+.cv-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.cv-preview h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.cv-contact {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.cv-section:not(:last-child) {
+    margin-top: 25px;
+    border-bottom: 2px solid #444;
+}
+
+.cv-entry {
+    margin-bottom: 15px;
+}
+
+.cv-entry.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv-date {
+    font-style: italic;
+    font: #777;
+}
