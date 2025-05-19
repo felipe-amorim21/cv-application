@@ -90,16 +90,15 @@ function App(){
     return (
         <div className="cv-application">
             <div className="cv-info">
-                <div className='cv-card'>
+                <div className={`cv-card ${!personalInfoVisible ? 'hidden' : ''}`}>
                     <div className='card-title'>
                         <strong><p>Personal Info</p></strong>
                         <button onClick={togglePersonalInfo}>{personalInfoVisible ? "Hide" : "Show"}</button>
                     </div>
-                    
-                    
+                
                     {personalInfoVisible && <PersonalInfoForm personalInfo={personalInfo} onPersonalInfoChange={(e) => handleInfoChange(e, setPersonalInfo)}/> }
                 </div>
-                <div className='cv-card'>
+                <div className={`cv-card ${!educationInfoVisible ? 'hidden' : ''}`}>
                     <div className='card-title'>
                     <strong><p>Educational Info</p></strong>
                     <button onClick={toggleEducationInfo}>{educationInfoVisible ? "Hide" : "Show"}</button>
@@ -109,17 +108,17 @@ function App(){
                     {educationInfo.map((educationInfo, index) => (
                     <div key={index}>
                         <EducationForm educationInfo={educationInfo} onEducationInfoChange={(e) => handleEducationChange(e, index)}/>
-                        <button onClick={() => removeEducationForm(index)}>Delete</button>
+                        <button className='delete-button' onClick={() => removeEducationForm(index)}>Delete</button>
                     </div>
                     
                 ))}
-                    <button onClick={addEducationForm}>Add</button>
+                    <button className='add-button' onClick={addEducationForm}>Add</button>
                     </div>}
                     
                     
                 </div>
 
-                <div className='cv-card'>
+                <div className={`cv-card ${!workExperienceInfoVisible ? 'hidden' : ''}`}>
                     <div className='card-title'>
                         <strong><p>Word Experience Info</p></strong>
                         <button onClick={toggleWorkExperienceInfo}>{workExperienceInfoVisible ? "Hide" : "Show"}</button>
