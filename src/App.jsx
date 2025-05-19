@@ -113,9 +113,10 @@ function App(){
                     </div>
                     
                 ))}
+                    <button onClick={addEducationForm}>Add</button>
                     </div>}
                     
-                <button onClick={addEducationForm}>Add</button>
+                    
                 </div>
 
                 <div className='cv-card'>
@@ -128,11 +129,12 @@ function App(){
                         {workExperienceInfo.map((workExperienceInfo, index) => (
                             <div key={index}>
                                 <WorkExperienceForm workExperienceInfo={workExperienceInfo} onWorkExperienceChange={(e) => handleWorkExperienceChange(e, index)}/>
-                                <button onClick={() => removeWorkExperience(index)}>Delete</button>
+                                <button className='delete-button' onClick={() => removeWorkExperience(index)}>Delete</button>
                             </div>
                         ))}
+                        <button className='add-button' onClick={addWorkExperienceForm}>Add</button>
                     </div>}
-                    <button onClick={addWorkExperienceForm}>Add</button>
+                    
                 </div>
                 
 

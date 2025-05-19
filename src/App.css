@@ -34,10 +34,11 @@
 }
 
 .cv-card button {
-  background-color: #4A90E2;      /* Azul moderno */
+  background-color: #4A90E2;
   color: white;
   border: none;
   padding: 10px 20px;
+  margin-top: 1rem;
   margin-bottom: 10px;
   font-size: 16px;
   border-radius: 6px;
@@ -47,11 +48,19 @@
 }
 
 .cv-card button:hover {
-  background-color: #357ABD;      /* Tom um pouco mais escuro no hover */
+  background-color: #357ABD;
   transform: scale(1.03);
 }
 
 .cv-card button:active {
   transform: scale(0.98);
   background-color: #2C5F9E;
+}
+
+.cv-card button.add-button {
+    background-color: #35bd49;
+}
+
+.cv-card button.delete-button {
+    background-color: #bd4335;
 }
