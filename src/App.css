@@ -4,8 +4,13 @@
     padding: 2rem;
     justify-content: space-around;
 }
+.cv-info {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
 
-.cv-info, .cv-display {
+.cv-card, .cv-display {
     flex: 1;
     border: 1px solid #ccc;
     padding: 1rem;

@@ -90,9 +90,13 @@ function App(){
     return (
         <div className="cv-application">
             <div className="cv-info">
-                <button onClick={togglePersonalInfo}>{personalInfoVisible ? "Hide" : "Show"} Personal Info</button>
-                {personalInfoVisible && <PersonalInfoForm personalInfo={personalInfo} onPersonalInfoChange={(e) => handleInfoChange(e, setPersonalInfo)}/> } 
-                <div className='education'>
+                <div className='cv-card'>
+                    <button onClick={togglePersonalInfo}>{personalInfoVisible ? "Hide" : "Show"} Personal Info</button>
+                    {personalInfoVisible && <PersonalInfoForm personalInfo={personalInfo} onPersonalInfoChange={(e) => handleInfoChange(e, setPersonalInfo)}/> }
+                </div>
+                 
+                <div className='cv-card'>
+
                     <button onClick={toggleEducationInfo}>{educationInfoVisible ? "Hide" : "Show"} Education Info</button>
                     {educationInfoVisible && <div className='education-conteiner'>
                     {educationInfo.map((educationInfo, index) => (
@@ -107,7 +111,7 @@ function App(){
                 <button onClick={addEducationForm}>Add</button>
                 </div>
 
-                <div className='work'>
+                <div className='cv-card'>
                     <button onClick={toggleWorkExperienceInfo}>{workExperienceInfoVisible ? "Hide" : "Show"} Work Experience</button>
                     {workExperienceInfoVisible && <div className='work-container'>
                         {workExperienceInfo.map((workExperienceInfo, index) => (
