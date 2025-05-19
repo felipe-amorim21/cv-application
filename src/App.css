@@ -11,7 +11,9 @@
 }
 
 .cv-card, .cv-display {
-    flex: 1;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
     border: 1px solid #ccc;
     padding: 1rem;
     border-radius: 8px;
@@ -19,6 +21,11 @@
 
 .cv-card.hidden {
     max-height: 5rem;
+}
+
+.cv-card {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
 }
 
 .card-title {
