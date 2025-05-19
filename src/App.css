@@ -16,3 +16,42 @@
     padding: 1rem;
     border-radius: 8px;
 }
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.card-title p {
+    font-size: x-large;
+}
+
+.cv-card button{
+    display: flex;
+    justify-self: flex-end;
+}
+
+.cv-card button {
+  background-color: #4A90E2;      /* Azul moderno */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cv-card button:hover {
+  background-color: #357ABD;      /* Tom um pouco mais escuro no hover */
+  transform: scale(1.03);
+}
+
+.cv-card button:active {
+  transform: scale(0.98);
+  background-color: #2C5F9E;
+}

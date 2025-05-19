@@ -91,13 +91,20 @@ function App(){
         <div className="cv-application">
             <div className="cv-info">
                 <div className='cv-card'>
-                    <button onClick={togglePersonalInfo}>{personalInfoVisible ? "Hide" : "Show"} Personal Info</button>
+                    <div className='card-title'>
+                        <strong><p>Personal Info</p></strong>
+                        <button onClick={togglePersonalInfo}>{personalInfoVisible ? "Hide" : "Show"}</button>
+                    </div>
+                    
+                    
                     {personalInfoVisible && <PersonalInfoForm personalInfo={personalInfo} onPersonalInfoChange={(e) => handleInfoChange(e, setPersonalInfo)}/> }
                 </div>
-                 
                 <div className='cv-card'>
-
-                    <button onClick={toggleEducationInfo}>{educationInfoVisible ? "Hide" : "Show"} Education Info</button>
+                    <div className='card-title'>
+                    <strong><p>Educational Info</p></strong>
+                    <button onClick={toggleEducationInfo}>{educationInfoVisible ? "Hide" : "Show"}</button>
+                    </div>
+                    
                     {educationInfoVisible && <div className='education-conteiner'>
                     {educationInfo.map((educationInfo, index) => (
                     <div key={index}>
@@ -112,7 +119,11 @@ function App(){
                 </div>
 
                 <div className='cv-card'>
-                    <button onClick={toggleWorkExperienceInfo}>{workExperienceInfoVisible ? "Hide" : "Show"} Work Experience</button>
+                    <div className='card-title'>
+                        <strong><p>Word Experience Info</p></strong>
+                        <button onClick={toggleWorkExperienceInfo}>{workExperienceInfoVisible ? "Hide" : "Show"}</button>
+                    </div>
+                    
                     {workExperienceInfoVisible && <div className='work-container'>
                         {workExperienceInfo.map((workExperienceInfo, index) => (
                             <div key={index}>
