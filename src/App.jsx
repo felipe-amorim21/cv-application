@@ -4,7 +4,6 @@ import PersonalInfoForm from "./components/PersonalInfoForm";
 import CVDisplay from "./components/CVDisplay";
 import EducationForm from './components/EducationForm';
 import WorkExperienceForm from './components/WorkExperienceForm';
-import DownloadButton from './components/DownloadButton';
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 function App(){
@@ -104,9 +103,11 @@ function App(){
 
     return (
         <>
+        <div className='btn-container'>
             <button onClick={handleDownload} className="btn-download">
                 Baixar Currículo
             </button>
+        </div>
         <div>
             <div className="cv-application">
             <div className="cv-info">
