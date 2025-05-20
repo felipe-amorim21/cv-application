@@ -5,11 +5,13 @@
     color: #333;
     padding: 20px;
     background-color: #fff;
+    width: 100%;
 }
 
 .cv-header {
     border-bottom: 2px solid #444;
     margin-bottom: 20px;
+    
 }
 
 .cv-header {
@@ -22,11 +24,22 @@
 .cv-preview h1 {
     font-size: 2rem;
     margin-bottom: 5px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.cv-summary {
+    width: 100%;
+    max-width: 30.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .cv-contact {
     font-size: 0.9rem;
     color: #555;
+    width: 100%;
 }
 
 .cv-section:not(:last-child) {
@@ -36,6 +49,9 @@
 
 .cv-entry {
     margin-bottom: 15px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .cv-entry.header{
@@ -46,4 +62,7 @@
 .cv-date {
     font-style: italic;
     font: #777;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
