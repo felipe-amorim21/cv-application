@@ -4,6 +4,9 @@ import PersonalInfoForm from "./components/PersonalInfoForm";
 import CVDisplay from "./components/CVDisplay";
 import EducationForm from './components/EducationForm';
 import WorkExperienceForm from './components/WorkExperienceForm';
+import DownloadButton from './components/DownloadButton';
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 function App(){
     const [personalInfo, setPersonalInfo] = useState({
         firstName: '',
@@ -85,10 +88,27 @@ function App(){
         setWorkExperienceInfo(updatedWorkExperience);
     }
 
+    const handleDownload = () => {
+        html2canvas(document.querySelector("#cv-download")).then((canvas) => {
+            document.body.appendChild(canvas); // if you want see your screenshot in body.
+            const imgData = canvas.toDataURL("image/png");
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, "PNG", 0, 0);
+            pdf.save("download.pdf");
+        });
+    };
+
+
+
         
 
     return (
-        <div className="cv-application">
+        <>
+            <button onClick={handleDownload} className="btn-download">
+                Baixar Currículo
+            </button>
+        <div>
+            <div className="cv-application">
             <div className="cv-info">
                 <div className={`cv-card ${!personalInfoVisible ? 'hidden' : ''}`}>
                     <div className='card-title'>
@@ -138,10 +158,13 @@ function App(){
                 
 
             </div>
-            <div className="cv-display">
+            <div className="cv-display" id='cv-download'>
                 <CVDisplay personalInfo={personalInfo} educationInfo={educationInfo} workExperienceInfo={workExperienceInfo}/>
             </div>
         </div>
+        </div>
+        </>
+        
     );
 
 }
